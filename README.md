@@ -71,7 +71,7 @@ Also any game clips that they might have:
 ```
 lennox.getGameClipsByUserId('').then(console.log)
 // [{
-// 		"gameClipId": "ebf92234-45cc-4e7d-82f9-d794b56a8e8a",
+// 	   "gameClipId": "ebf92234-45cc-4e7d-82f9-d794b56a8e8a",
 //     "state": "Published",
 //     "datePublished": "2015-09-13T18:41:16.1425663Z",
 //     "dateRecorded": "2015-09-13 18:23:17",
