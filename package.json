@@ -15,8 +15,8 @@
   "author": "Mike Holmes #IDWIW",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.16.1"
+    "axios": "^0.16.1",
+    "lodash": "^4.17.4"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
