@@ -14,6 +14,16 @@ You can initialise the library by simply requiring the `index.js` file (I will m
 let lennox = require('./index.js')('<xbox_api_key>')
 ```
 
+### Response Object
+All functions return an object containing the requested data along with the `xboxapi.com` rate limit details for your logged in account. The following are returned as part of any function call:
+
+  * `data (object)` - The data returned from the requested function.
+  * `x-ratelimit-limit (integer)` - This is the number of API requests you can make depending on your `xboxai.com` account. For example, the free account gives you 120 requests an hour.
+  * `x-ratelimit-remaining (integer)` - This is the number of API requests you can still make before the reset period. This will decrement based on every function call to `lennox`.
+  * `x-ratelimit-reset (integer)` - The time, in seconds, until the API limit period is reset.
+
+Example responses can be seen in the usage examples below.
+
 ### Usage
 Once you have initialised an instance of `lennox` you can simply call any functions that you require on it. All functions return a `Promise` which is the body of the response from `xboxapi.com`.
 
@@ -21,9 +31,12 @@ As an example, the following will return the `XBox User ID` and GamerTag based o
 
 ```
 lennox.getAccountId().then(console.log)
-//{ xuid: 2533274833971580,
+//{ data: { xuid: 2533274833971580,
 //  gamerTag: 'HoodedBuddhist',
-//  gamertag: 'HoodedBuddhist' }
+//  gamertag: 'HoodedBuddhist' },
+//  'x-ratelimit-limit': '120',
+//  'x-ratelimit-remaining': '117',
+//  'x-ratelimit-reset': '2350' }
 ```
 
 Or you can get your full profile:
@@ -37,14 +50,20 @@ You can get a `User ID` from a GamerTag:
 
 ```
 lennox.getUserIdByGamertag('HoodedBuddhist').then(console.log)
-// { xuid: '2533274833971580' }
+// { data: { xuid: '2533274833971580' },
+//   'x-ratelimit-limit': '120',
+//   'x-ratelimit-remaining': '117',
+//   'x-ratelimit-reset': '2350' }
 ```
 
 Or you can get a GamerTag from a `User ID`:
 
 ```
 lennox.getGamertagByUserId().then(console.log)
-// { gamertag: 'HoodedBuddhist' }
+// { data: { gamertag: 'HoodedBuddhist' },
+//   'x-ratelimit-limit': '120',
+//   'x-ratelimit-remaining': '117',
+//   'x-ratelimit-reset': '2350' }
 ```
 
 Once you have your `User ID` (or anyone's for that matter) you can get various details about them. For example their Gamer Card:
@@ -70,7 +89,7 @@ Also any game clips that they might have:
 
 ```
 lennox.getGameClipsByUserId('').then(console.log)
-// [{
+// { data: [{
 // 	   "gameClipId": "ebf92234-45cc-4e7d-82f9-d794b56a8e8a",
 //     "state": "Published",
 //     "datePublished": "2015-09-13T18:41:16.1425663Z",
@@ -120,7 +139,10 @@ lennox.getGameClipsByUserId('').then(console.log)
 //     "gameClipDetails": "https://xboxapi.com/v2/2533274833971580/game-clip-details/88940100-b0a6-495b-9f60-d06b4192859e/ebf92234-45cc-4e7d-82f9-d794b56a8e8a"
 //     },
 //     ...
-// ]
+// ],
+//  'x-ratelimit-limit': '120',
+//  'x-ratelimit-remaining': '117',
+//  'x-ratelimit-reset': '2350' }
 ```
 
 ### API Functions
@@ -169,6 +191,7 @@ The following is an outline of all the functions provided in `lennox` (explanati
 ## Built With
 
 * [Axios](https://github.com/mzabriskie/axios) - A rather good Promise based HTTP client
+* [Lodash](https://github.com/lodash/lodash) - Full of excellence
 
 ## Authors
 
