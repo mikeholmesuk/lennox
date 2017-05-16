@@ -18,9 +18,9 @@ let lennox = require('./index.js')('<xbox_api_key>')
 All functions return an object containing the requested data along with the `xboxapi.com` rate limit details for your logged in account. The following are returned as part of any function call:
 
   * `data (object)` - The data returned from the requested function.
-  * `x-ratelimit-limit (integer)` - This is the number of API requests you can make depending on your `xboxai.com` account. For example, the free account gives you 120 requests an hour.
-  * `x-ratelimit-remaining (integer)` - This is the number of API requests you can still make before the reset period. This will decrement based on every function call to `lennox`.
-  * `x-ratelimit-reset (integer)` - The time, in seconds, until the API limit period is reset.
+  * `ratelimit-limit (integer)` - This is the number of API requests you can make depending on your `xboxai.com` account. For example, the free account gives you 120 requests an hour.
+  * `ratelimit-remaining (integer)` - This is the number of API requests you can still make before the reset period. This will decrement based on every function call to `lennox`.
+  * `ratelimit-reset (integer)` - The time, in seconds, until the API limit period is reset.
 
 Example responses can be seen in the usage examples below.
 
@@ -34,9 +34,9 @@ lennox.getAccountId().then(console.log)
 //{ data: { xuid: 2533274833971580,
 //  gamerTag: 'HoodedBuddhist',
 //  gamertag: 'HoodedBuddhist' },
-//  'x-ratelimit-limit': 120,
-//  'x-ratelimit-remaining': 117,
-//  'x-ratelimit-reset': 2350 }
+//  ratelimit_limit: 120,
+//  ratelimit_remaining: 117,
+//  ratelimit_reset: 2350 }
 ```
 
 Or you can get your full profile:
@@ -51,9 +51,9 @@ You can get a `User ID` from a GamerTag:
 ```
 lennox.getUserIdByGamertag('HoodedBuddhist').then(console.log)
 // { data: { xuid: '2533274833971580' },
-//   'x-ratelimit-limit': 120,
-//   'x-ratelimit-remaining': 117,
-//   'x-ratelimit-reset': 2350 }
+//   ratelimit_limit: 120,
+//   ratelimit_remaining: 117,
+//   ratelimit_reset: 2350 }
 ```
 
 Or you can get a GamerTag from a `User ID`:
@@ -61,9 +61,9 @@ Or you can get a GamerTag from a `User ID`:
 ```
 lennox.getGamertagByUserId().then(console.log)
 // { data: { gamertag: 'HoodedBuddhist' },
-//   'x-ratelimit-limit': 120,
-//   'x-ratelimit-remaining': 117,
-//   'x-ratelimit-reset': 2350 }
+//   ratelimit_limit: 120,
+//   ratelimit_remaining: 117,
+//   ratelimit_reset: 2350 }
 ```
 
 Once you have your `User ID` (or anyone's for that matter) you can get various details about them. For example their Gamer Card:
@@ -140,9 +140,9 @@ lennox.getGameClipsByUserId('').then(console.log)
 //     },
 //     ...
 // ],
-//  'x-ratelimit-limit': '120',
-//  'x-ratelimit-remaining': '117',
-//  'x-ratelimit-reset': '2350' }
+//  ratelimit_limit: 120,
+//  ratelimit_remaining: 117,
+//  ratelimit_reset: 2350 }
 ```
 
 ### API Functions
