@@ -34,9 +34,9 @@ lennox.getAccountId().then(console.log)
 //{ data: { xuid: 2533274833971580,
 //  gamerTag: 'HoodedBuddhist',
 //  gamertag: 'HoodedBuddhist' },
-//  'x-ratelimit-limit': '120',
-//  'x-ratelimit-remaining': '117',
-//  'x-ratelimit-reset': '2350' }
+//  'x-ratelimit-limit': 120,
+//  'x-ratelimit-remaining': 117,
+//  'x-ratelimit-reset': 2350 }
 ```
 
 Or you can get your full profile:
@@ -51,9 +51,9 @@ You can get a `User ID` from a GamerTag:
 ```
 lennox.getUserIdByGamertag('HoodedBuddhist').then(console.log)
 // { data: { xuid: '2533274833971580' },
-//   'x-ratelimit-limit': '120',
-//   'x-ratelimit-remaining': '117',
-//   'x-ratelimit-reset': '2350' }
+//   'x-ratelimit-limit': 120,
+//   'x-ratelimit-remaining': 117,
+//   'x-ratelimit-reset': 2350 }
 ```
 
 Or you can get a GamerTag from a `User ID`:
@@ -61,9 +61,9 @@ Or you can get a GamerTag from a `User ID`:
 ```
 lennox.getGamertagByUserId().then(console.log)
 // { data: { gamertag: 'HoodedBuddhist' },
-//   'x-ratelimit-limit': '120',
-//   'x-ratelimit-remaining': '117',
-//   'x-ratelimit-reset': '2350' }
+//   'x-ratelimit-limit': 120,
+//   'x-ratelimit-remaining': 117,
+//   'x-ratelimit-reset': 2350 }
 ```
 
 Once you have your `User ID` (or anyone's for that matter) you can get various details about them. For example their Gamer Card:
