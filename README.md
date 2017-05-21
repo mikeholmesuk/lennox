@@ -200,6 +200,10 @@ The following is an outline of all the functions provided in `lennox` (explanati
 
 * **Mike Holmes** - I Do What I Want `#IDWIW`
 
+##NPM
+
+https://www.npmjs.com/package/lennox
+
 ## Contributors
 
 * **Nick Cain**
