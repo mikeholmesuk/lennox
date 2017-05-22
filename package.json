@@ -1,6 +1,6 @@
 {
   "name": "lennox",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A very basic node wrapper round the xboxapi.com public API.",
   "main": "index.js",
   "repository": {
