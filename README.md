@@ -24,9 +24,11 @@ All functions return an object containing the requested data along with the `xbo
 
 Example responses can be seen in the usage examples below.
 
-### Usage
+### Installation
 
-`yarn` or `npm i`
+`yarn add lennox` or `npm install lennox`
+
+### Usage
 
 Once you have initialised an instance of `lennox` you can simply call any functions that you require on it. All functions return a `Promise` which is the body of the response from `xboxapi.com`.
 
