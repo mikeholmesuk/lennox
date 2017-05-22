@@ -1,8 +1,12 @@
 {
   "name": "lennox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A very basic node wrapper round the xboxapi.com public API.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mikeholmesuk/lennox.git"
+  },
   "scripts": {
     "test": "mocha"
   },
@@ -13,7 +17,13 @@
     "xboxer"
   ],
   "author": "Mike Holmes #IDWIW",
+  "contributors": [
+    {
+      "name": "Nick cain"
+    }
+  ],
   "license": "ISC",
+  "homepage": "https://github.com/mikeholmesuk/lennox#readme",
   "dependencies": {
     "axios": "^0.16.1",
     "lodash": "^4.17.4"

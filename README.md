@@ -25,6 +25,9 @@ All functions return an object containing the requested data along with the `xbo
 Example responses can be seen in the usage examples below.
 
 ### Usage
+
+`yarn` or `npm i`
+
 Once you have initialised an instance of `lennox` you can simply call any functions that you require on it. All functions return a `Promise` which is the body of the response from `xboxapi.com`.
 
 As an example, the following will return the `XBox User ID` and GamerTag based on the configured `XBOX API Key`:
@@ -196,3 +199,11 @@ The following is an outline of all the functions provided in `lennox` (explanati
 ## Authors
 
 * **Mike Holmes** - I Do What I Want `#IDWIW`
+
+##NPM
+
+https://www.npmjs.com/package/lennox
+
+## Contributors
+
+* **Nick Cain**
