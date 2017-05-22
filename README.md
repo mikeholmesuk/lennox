@@ -18,9 +18,9 @@ let lennox = require('./index.js')('<xbox_api_key>')
 All functions return an object containing the requested data along with the `xboxapi.com` rate limit details for your logged in account. The following are returned as part of any function call:
 
   * `data (object)` - The data returned from the requested function.
-  * `ratelimit-limit (integer)` - This is the number of API requests you can make depending on your `xboxai.com` account. For example, the free account gives you 120 requests an hour.
-  * `ratelimit-remaining (integer)` - This is the number of API requests you can still make before the reset period. This will decrement based on every function call to `lennox`.
-  * `ratelimit-reset (integer)` - The time, in seconds, until the API limit period is reset.
+  * `ratelimit_limit (integer)` - This is the number of API requests you can make depending on your `xboxai.com` account. For example, the free account gives you 120 requests an hour.
+  * `ratelimit_remaining (integer)` - This is the number of API requests you can still make before the reset period. This will decrement based on every function call to `lennox`.
+  * `ratelimit_reset (integer)` - The time, in seconds, until the API limit period is reset.
 
 Example responses can be seen in the usage examples below.
 
